@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHEBERT | Premium Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <div id="loginOverlay">
+        <div class="login-card">
+            <div class="logo">MHEBERT <span>ADMIN</span></div>
+            <h1>Acceso Restringido</h1>
+            <p>Introduce la clave maestra</p>
+            <div class="input-field">
+                <input type="password" id="adminPass" placeholder="Clave de acceso">
+            </div>
+            <button id="entryBtn" class="login-btn">Ingresar al Sistema</button>
+            <p id="loginError" class="error-text">Clave incorrecta</p>
+        </div>
+    </div>
+
+    <div id="dashboard" class="admin-layout hidden">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M<span>H</span></div>
+                <span class="brand-name">MHEBERT</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="#" onclick="exportData()"><i data-lucide="download"></i> Exportar Datos</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i data-lucide="log-out"></i> <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title">
+                    <h2>Gestión de Mensajes</h2>
+                    <p id="current-date"></p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-danger" id="clearAllBtn"><i data-lucide="trash-2"></i> Borrar Historial</button>
+                </div>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon pulse"><i data-lucide="mail"></i></div>
+                    <div class="stat-info">
+                        <h3>Mensajes</h3>
+                        <span id="totalMsgs">0</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i data-lucide="shield-check"></i></div>
+                    <div class="stat-info">
+                        <h3>Seguridad</h3>
+                        <span>Encriptada</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="content-panel">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Email</th>
+                                <th style="width: 40%;">Mensaje</th>
+                                <th>Fecha</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="msgBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
