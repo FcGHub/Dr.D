@@ -1,0 +1,150 @@
+:root {
+  --primary: #00aaff;
+  --primary-dark: #0088cc;
+  --text: #333;
+  --light: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 0.7rem 1.3rem;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+}
+
+.hero {
+  text-align: center;
+  padding: 8rem 5%;
+  color: white;
+  background: linear-gradient(rgba(0,170,255,0.3), rgba(0,170,255,0.3)),
+              url('https://images.unsplash.com/photo-1606811841689-4a61a3a6e1f0?auto=format&fit=crop&q=80') center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.stats {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+}
+
+.big {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.muted {
+  color: gray;
+}
+
+.services {
+  padding: 4rem 5%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card i {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.doctor {
+  padding: 4rem;
+  text-align: center;
+  background: var(--primary);
+  color: white;
+}
+
+footer {
+  padding: 3rem;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+}

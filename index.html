@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud Dental Dr. Daniela G </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #00aaff;
+      /* Azul dental principal */
+      --primary-dark: #0088cc;
+      --accent: #ff6b6b;
+      /* Toque rosado/rojo suave */
+      --text: #333;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h3 {
+      color: rgb(0, 255, 170);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 170, 255, 0.1), rgba(0, 170, 255, 0.05)), url('https://images.unsplash.com/photo-1606811841689-4a61a3a6e1f0?auto=format&fit=crop&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 10rem 5% 8rem;
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .stats {
+      text-align: center;
+      padding: 4rem 5%;
+      background: white;
+    }
+
+    .stats h2 {
+      font-size: 4rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .services {
+      padding: 6rem 5%;
+      background: var(--light);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--primary);
+    }
+
+    .national {
+      padding: 6rem 5%;
+      background: white;
+      text-align: center;
+    }
+
+    .national .grid {
+      margin-top: 3rem;
+    }
+
+    .doctor {
+      padding: 6rem 5%;
+      background: linear-gradient(to right, var(--primary), #0099dd);
+      color: white;
+      text-align: center;
+    }
+
+    .doctor h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .doctor ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .doctor li {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .contact-item i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    input,
+    textarea {
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button.btn {
+      align-self: center;
+      border: none;
+      cursor: pointer;
+    }
+
+    .copyright {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 6rem 5% 4rem;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Salud Dental Dr. Daniela</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a href="https://wa.me/573001234567?text=Hola%20quiero%20agendar%20una%20cita" class="btn" target="_blank">Agendar
+      Cita</a>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Clínica Odontológica Especializada</h1>
+    <h2>¡NUESTRO MOTIVO ES CUIDAR TU SONRISA!</h2>
+    <p>Cuidado profiláctico avanzado y estética dental con tecnología de punta. Atención personalizada para mantener tu
+      salud oral intacta.</p>
+    <h3>Sonrisas que definen el futuro</h3>
+    <div style="margin:2rem 0;">
+      <a href="#contacto" class="btn" style="margin-right:1rem;">Agenda tu cita</a>
+      <a href="#servicios" class="btn" style="background:transparent; border:2px solid white;">Ver servicios</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <h2>⭐⭐⭐⭐⭐</h2>
+    <p style="font-size:1.8rem; font-weight:bold;">+500 Sonrisas transformadas</p>
+    <p style="color:var(--gray); margin-top:1rem;">Tecnología Avanzada & Segura</p>
+  </section>
+
+  <section class="services" id="servicios">
+    <h2 style="text-align:center; font-size:2.8rem; margin-bottom:1rem;">ESPECIALIDADES</h2>
+    <p style="text-align:center; font-size:1.3rem; max-width:800px; margin:0 auto 3rem;">Excelencia en Cuidado Dental
+    </p>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-shield-alt" style="font-size:4rem; color:var(--primary);"></i>
+        <h3>Prevención</h3>
+        <p>Cuidado profiláctico avanzado para mantener tu salud oral intacta. Limpiezas profundas, diagnósticos
+          tempranos y asesoría continua para evitar futuras complicaciones.</p>
+        <a href="#contacto" class="btn" style="margin-top:1.5rem; display:inline-block;">Consultar por prevención</a>
+      </div>
+      <div class="card">
+        <i class="fas fa-smile-beam" style="font-size:4rem; color:var(--primary);"></i>
+        <h3>Estética Dental</h3>
+        <p>Diseño de sonrisa impecable. Carillas de alta calidad y blanqueamiento con altos estandares de calidad.</p>
+        <a href="#contacto" class="btn" style="margin-top:1.5rem; display:inline-block;">Diseña tu sonrisa</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="national">
+    <h2 style="font-size:2.8rem;">Atención a Nivel Nacional</h2>
+    <p style="font-size:1.3rem; max-width:800px; margin:1rem auto 3rem;">Rompemos las barreras de la distancia para
+      brindarte la mejor odontología.</p>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-map-marked-alt" style="font-size:3.5rem; color:var(--primary);"></i>
+        <h3>Cobertura Nacional</h3>
+        <p>Atendemos pacientes de todo el país con agendas flexibles para facilitar tu viaje.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-video" style="font-size:3.5rem; color:var(--primary);"></i>
+        <h3>Asesoría a Distancia</h3>
+        <p>Consultas virtuales preliminares para diagnosticar y planificar tu tratamiento.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-user-md" style="font-size:3.5rem; color:var(--primary);"></i>
+        <h3>Soluciones Personalizadas</h3>
+        <p>Cada tratamiento se diseña a medida, entendiendo las necesidades únicas de tu sonrisa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="doctor" id="nosotros">
+    <h2>CONOCE A TU ESPECIALISTA</h2>
+    <h3>Dra. Daniela Giraldo</h3>
+    <p style="font-size:1.3rem; max-width:900px; margin:1.5rem auto;">Con más de una década de experiencia clínica, la
+      Dra. Daniela lidera un equipo multidisciplinario enfocado en brindar una odontología moderna, sin dolor y con
+      resultados excepcionales.</p>
+    <p style="font-style:italic; max-width:800px; margin:2rem auto;">Creemos que cada sonrisa tiene el poder de definir
+      el futuro de una persona. Por eso, combinamos el arte de la estética dental con la precisión de la ciencia
+      profiláctica para asegurar que tu sonrisa no solo se vea hermosa, sino que esté verdaderamente sana.</p>
+    <ul>
+      <li>Especialista en Rehabilitación y Estética</li>
+      <li>Odontología Integral</li>
+      <li>Atención humanizada y sin estrés</li>
+    </ul>
+    <h3 style="margin:3rem 0 1rem; font-size:2.2rem;">Comienza tu transformación hoy.</h3>
+  </section>
+
+  <footer id="contacto">
+    <h2 style="font-size:2.5rem; margin-bottom:3rem;">Estamos aquí para resolver tus dudas</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>+57 316 536 8918</p>
+        <p>🦷🦷🦷</p>
+        <a href="https://wa.me/573165368918?text=Hola%20Dra.%20Daniela,%20quiero%20agendar%20mi%20cita" class="btn"
+          target="_blank" style="margin-top:1rem;">Chatea ahora</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <h3>Instagram</h3>
+        <p>@dradanielagiraldo1</p>
+        <p>🦷🦷🦷</p>
+        <a href="https://www.instagram.com/dradanielagiraldo1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          class="btn" target="_blank" style="margin-top:1rem;">Síguenos</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Ubicación</h3>
+        <p>Calle 71 4A-7
+          Ibagué, Tolima
+          Colombia
+        </p>
+        <p>🦷🦷🦷</p>
+        <a href="https://maps.apple.com/frame?center=4.436544,-75.195042&distance=127.407339&map=explore&span=0.000611,0.000673"
+          class="btn" target="_blank" style="margin-top:1rem;">Ver</a>
+        <p></p>
+        <p>Cobertura Nacional</p>
+
+      </div>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu email" required />
+      <input type="tel" placeholder="Tu teléfono" required />
+      <textarea rows="5" placeholder="Déjanos tu mensaje..." required></textarea>
+      <button type="submit" class="btn">Enviar mensaje</button>
+    </form>
+
+    <div class="copyright">
+      © 2026 Salud Oral Dra. Daniela Giraldo. Todos los derechos reservados.<br>
+      ¡NUESTRO MOTIVO ES CUIDAR TU SONRISA!
+    </div>
+  </footer>
+
+  <script>
+    // Formulario básico (solo demo, no envía nada real)
+    document.querySelector('form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('¡Mensaje enviado! Pronto te contactaremos 😊');
+    });
+  </script>
+</body>
+
+</html>
